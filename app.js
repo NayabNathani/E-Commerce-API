@@ -38,7 +38,7 @@ app.use(cors())
 app.use(xss())
 app.use(mongoSanitize())
 
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 
 //access to json data in req.body
 app.use(express.json());
@@ -48,15 +48,15 @@ app.use(express.static('./public'));
 app.use(fileUpload());
 
 //default route
-app.get('/', (req, res)=>{
-    console.log(req.cookies);
-    res.send('Ecom Api')
-})
+// app.get('/', (req, res)=>{
+//     console.log(req.cookies);
+//     res.send('Ecom Api')
+// })
 
-app.get('/api/v1', (req, res)=>{
-    console.log(req.signedCookies);
-    res.send('Ecom Api')
-})
+// app.get('/api/v1', (req, res)=>{
+//     console.log(req.signedCookies);
+//     res.send('Ecom Api')
+// })
 
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/users', userRouter)
